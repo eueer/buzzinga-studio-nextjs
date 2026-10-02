@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "test:responsive": "node tests/responsive-pricing.cjs"
   },
   "dependencies": {
     "next": "14.2.24",
@@ -16,6 +17,7 @@
     "@types/node": "^20",
     "@types/react": "^18.3.1",
     "@types/react-dom": "^18.3.1",
+    "playwright": "1.62.1",
     "typescript": "^5"
   }
 }
