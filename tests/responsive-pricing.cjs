@@ -181,6 +181,8 @@ async function checkFooterClicks(page, context, javaScriptEnabled) {
             const nav = [...document.querySelectorAll('nav')].find(n => n.getBoundingClientRect().width > 0);
             return nav?.dataset.framerName === (width < 1200 ? 'Mobile Closed' : 'Desktop');
           }, width);
+          // Let the existing spring transition settle before starting the next resize.
+          await page.waitForTimeout(500);
           checkState(await renderedState(page), width, 'resized');
           console.log(`PASS ${width}px resized: layout and pricing remain correct`);
         }
